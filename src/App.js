@@ -58,14 +58,11 @@ function App() {
 
       <div className="container">
         <div className="row">
-          {
-            items.map((item)=>{
-              return (
-                <Card item={item}></Card>
-              ) 
-            })
-          }
-
+          <div className="col-md-4">
+            <img src="../img/coffee1.jpg" height="220px" width="100%" />
+            <h4>{items[0].title}</h4>
+            <p>{items[0].content}</p>
+          </div>
           <div className="col-md-4">
             <img src="../img/coffee2.jpg" height="220px" width="100%" />
             <h4>{items[1].title}</h4>
@@ -82,15 +79,6 @@ function App() {
   );
 }
 
-function Card(props){ 
-    return(
-      <div className="col-md-4">
-        <img src={props.items.img} className="items" />
-        <h4>{props.items.title}</h4>
-        <p>{props.items.content}</p>
-      </div>
-    )
-}
 
 
 export default App;
