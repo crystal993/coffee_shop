@@ -58,27 +58,28 @@ function App() {
 
       <div className="container">
         <div className="row">
-          <div className="col-md-4">
-            <img src="../img/coffee1.jpg" height="220px" width="100%" />
-            <h4>{items[0].title}</h4>
-            <p>{items[0].content}</p>
-          </div>
-          <div className="col-md-4">
-            <img src="../img/coffee2.jpg" height="220px" width="100%" />
-            <h4>{items[1].title}</h4>
-            <p>{items[1].content}</p>
-          </div>
-          <div className="col-md-4">
-            <img src="../img/coffee3.jpg" height="220px" width="100%" />
-            <h4>{items[2].title}</h4>
-            <p>{items[2].content}</p>
-          </div>
+          {
+            items.map((item)=>{
+              return (
+                <Card item={item}></Card>
+              ) 
+            })
+          }
         </div>
       </div>
     </div>
   );
 }
 
+function Card(props){ 
+  return(
+    <div className="col-md-4">
+      <img src={props.item.img} className="items" />
+      <h4>{props.item.title}</h4>
+      <p>{props.item.content} & {props.item.price}</p>
+    </div>
+  )
+}
 
 
 export default App;
