@@ -59,9 +59,9 @@ function App() {
       <div className="container">
         <div className="row">
           {
-            items.map((item)=>{
+            items.map((item, i)=>{
               return (
-                <Card item={item}></Card>
+                <Card item={item} i={i} key={i}></Card>
               ) 
             })
           }
@@ -74,7 +74,7 @@ function App() {
 function Card(props){ 
   return(
     <div className="col-md-4">
-      <img src={props.item.img} className="items" />
+      <img src={"../img/coffee"+ (props.i+1) +".jpg"} className="items" />
       <h4>{props.item.title}</h4>
       <p>{props.item.content} & {props.item.price}</p>
     </div>
